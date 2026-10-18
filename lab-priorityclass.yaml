@@ -4,8 +4,7 @@ metadata:
   name: dev-pc
 value: 1000000
 globalDefault: false
-description: >-
-  This priority class should only be used for all development pods.
+description: "This priority class should only be used for all development pods."
 ---
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
@@ -13,8 +12,7 @@ metadata:
   name: preprod-pc
 value: 2000000
 globalDefault: false
-description: >-
-  This priority class should only be used for all preprod pods.
+description: "This priority class should only be used for all preprod pods."
 ---
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
@@ -22,8 +20,7 @@ metadata:
   name: prod-pc
 value: 4000000
 globalDefault: false
-description: >-
-  This priority class should only be used for all prod pods.
+description: "This priority class should only be used for all prod pods."
 ---
 apiVersion: v1
 kind: Pod
