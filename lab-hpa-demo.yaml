@@ -3,23 +3,23 @@ kind: Namespace
 metadata:
   name: autoscale
 ---
-# Deploy php-apache and expose it as a Service
+# Deploy apache-server and expose it as a Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php-apache
+  name: apache-server
   namespace: autoscale
 spec:
   selector:
     matchLabels:
-      run: php-apache
+      run: apache-server
   template:
     metadata:
       labels:
-        run: php-apache
+        run: apache-server
     spec:
       containers:
-      - name: php-apache
+      - name: apache-server
         image: registry.k8s.io/hpa-example
         ports:
         - containerPort: 80
@@ -32,12 +32,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: php-apache
+  name: apache-server
   namespace: autoscale
   labels:
-    run: php-apache
+    run: apache-server
 spec:
   ports:
   - port: 80
   selector:
-    run: php-apache
+    run: apache-server
